@@ -17,7 +17,7 @@
 # sed -i '$a src-git ddnsto https://github.com/linkease/ddnsto-openwrt' feeds.conf.default
 # sed -i '$a src-git adguardhome https://github.com/rufengsuixing/luci-app-adguardhome' feeds.conf.default
 # sed -i '$a src-git dnsfilter https://github.com/garypang13/luci-app-dnsfilter' feeds.conf.default
-sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+# sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 
 # 添加插件源码
 # sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
@@ -46,7 +46,7 @@ sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.de
 # rm -rf youhua.txt
 
 ## 2.修改mt7621.mk
-export imsize1=$(grep  -a -n -e 'define Device/xiaomi_mi-router-4a-100m' target/linux/ramips/image/mt7628.mk|cut -d ":" -f 1)
+export imsize1=$(grep  -a -n -e 'define Device/xiaomi_mi-router-4a-100m' target/linux/ramips/image/mt76x8.mk|cut -d ":" -f 1)
 export imsize1=$(expr $imsize1 + 2)
 export imsize1=$(echo $imsize1"s")
-sed -i "$imsize1/IMAGE_SIZE := .*/IMAGE_SIZE := 16064k/" target/linux/ramips/image/mt7628.mk
+sed -i "$imsize1/IMAGE_SIZE := .*/IMAGE_SIZE := 16064k/" target/linux/ramips/image/mt76x8.mk
