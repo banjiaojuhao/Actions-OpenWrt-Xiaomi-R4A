@@ -93,7 +93,7 @@ jobs:
     - name: compress openwrt
       id: compress
       run: |
-        7za a -mx=9 openwrt.7z openwrt
+        7za a -mx=5 openwrt.7z openwrt
 
     - name: Upload pre-compile files to cowtransfer
       id: cowtransfer
