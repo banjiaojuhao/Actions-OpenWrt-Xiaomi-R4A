@@ -102,7 +102,7 @@ jobs:
         find dl -size -1024c -exec rm -f {} \;
     
     - name: compress openwrt
-      id: package
+      id: compress
       run: |
         cd /workdir
         7za a -mx=9 openwrt.7z openwrt
