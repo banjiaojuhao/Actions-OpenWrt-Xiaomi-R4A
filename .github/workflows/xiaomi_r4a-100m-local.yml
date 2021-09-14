@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 编译小米R4A-100M-local
+name: 生成小米R4A-100M-编译前状态
 
 on:
   repository_dispatch:
