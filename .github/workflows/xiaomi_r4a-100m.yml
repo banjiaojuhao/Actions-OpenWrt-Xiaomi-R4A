@@ -68,9 +68,7 @@ jobs:
       run: |
         mv $CONFIG_FILE openwrt/.config
         sed -i "/&partitions/,/^\};/{N; d}" openwrt/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4a-100m.dts
-        sed -i "/&spi0/,/^\};/{N; d}" openwrt/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4.dtsi
-        echo -e "\n\n" >> openwrt/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4.dtsi
-        sed -n "/&spi0/,/^\};/p" openwrt/target/linux/ramips/dts/mt7621_youhua_wr1200js.dts >> openwrt/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4.dtsi
+        mv mt7628an_xiaomi_mi-router-4.dtsi openwrt/target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4.dtsi
         sed -i "/define Device\/xiaomi_mi-router-4a-100m/,/^endef/ s/IMAGE_SIZE := .*/IMAGE_SIZE := 16064k/" openwrt/target/linux/ramips/image/mt76x8.mk
         
 
